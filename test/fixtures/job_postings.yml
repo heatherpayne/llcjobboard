@@ -1,0 +1,7 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title,description,created_date,updated_date,expiry_date,is_featured: MyString
+
+two:
+  title,description,created_date,updated_date,expiry_date,is_featured: MyString
