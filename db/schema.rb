@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130310152203) do
+ActiveRecord::Schema.define(:version => 20130310180127) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -21,12 +21,21 @@ ActiveRecord::Schema.define(:version => 20130310152203) do
 
   create_table "job_postings", :force => true do |t|
     t.string   "title"
-    t.text     "description", :limit => 255
+    t.text     "description",            :limit => 255
     t.date     "expiry_date"
     t.boolean  "is_featured"
-    t.datetime "created_at",                 :null => false
-    t.datetime "updated_at",                 :null => false
+    t.datetime "created_at",                            :null => false
+    t.datetime "updated_at",                            :null => false
     t.integer  "category_id"
+    t.string   "position_type"
+    t.string   "contract_type"
+    t.string   "company_name"
+    t.string   "company_website"
+    t.string   "company_twitter"
+    t.string   "location"
+    t.text     "skills"
+    t.string   "application_form_email"
+    t.text     "email_message"
   end
 
   add_index "job_postings", ["category_id"], :name => "index_job_postings_on_category_id"
