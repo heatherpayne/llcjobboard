@@ -7,8 +7,8 @@
  	 <%= f.input :company_website, :label => "Company Website" %> 
   	<%= f.input :company_twitter, :label => "Twitter Handle" %> 
   	<%= f.input :description, :label => "Job Description" %> 
-  	<%= f.input :category, :label => "Job Category" %>
-  	<%= f.input :is_featured, :label => "Wouldyou like to feature this job?" %> 
+  	<%= f.input :category, :label => "Job Category", :include_blank => "Please select..." %>
+  	<%= f.input :is_featured, :label => "Would you like to feature this job?" %> 
   	<%= f.input :position_type, :as => :radio, :collection => ['Full-Time', 'Part-Time'], :label => "Full-time or Part-time?" %> 
   	<%= f.input :contract_type, :as => :radio, :collection => ['Permanent', 'Contract', 'Freelance'], :label => "Position Type" %> 
   	<%= f.input :location, :label => "Location" %> 
