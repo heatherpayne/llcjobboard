@@ -1,4 +1,7 @@
 Llcjobboard::Application.routes.draw do
+  resources :homes
+
+
   resources :categories
   resources :job_postings
   resources :users
