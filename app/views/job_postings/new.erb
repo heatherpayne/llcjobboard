@@ -1,0 +1,6 @@
+<h2>New Job Posting</h2>
+
+<%= semantic_form_for @job_posting do |f| %>
+  <%= f.inputs :title, :description, :category, :is_featured %>
+  <%= f.actions :submit, :cancel %>
+<% end %>

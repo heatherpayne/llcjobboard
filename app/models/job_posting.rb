@@ -1,3 +1,4 @@
 class JobPosting < ActiveRecord::Base
-  attr_accessible :title,description,created_date,updated_date,expiry_date,is_featured
+  attr_accessible :title,:description,:expiry_date,:is_featured,:category_id
+  belongs_to :category
 end

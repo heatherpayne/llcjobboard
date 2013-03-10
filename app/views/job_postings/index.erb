@@ -1,0 +1,5 @@
+<h2>Current Job Postings</h2>
+<% @job_postings.each do |p| %>
+  <strong><%= p.title %></strong>
+  <p><%= p.description %><p>
+<% end %>
