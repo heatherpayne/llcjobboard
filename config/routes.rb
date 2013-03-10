@@ -1,7 +1,13 @@
 Llcjobboard::Application.routes.draw do
-  resources :categories
-  resources :job_postings
-  resources :users
+  resources :categories do
+    resources :job_postings
+  end
+  resources :job_postings #we will get rid of this line when users are implemented
+  resources :users do
+    resources :job_postings
+  end
+
+  root :to => 'home#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

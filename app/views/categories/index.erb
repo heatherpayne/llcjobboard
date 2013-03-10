@@ -1,4 +1,9 @@
 <h2>Categories</h2>
+<p><%= link_to "New Category", new_category_path %></p>
+
+<h3>Current Categories</h3>
+<p>
 <% @categories.each do |c| %>
-  <%= c.name %><br>
+  <%= c.name %> <%= link_to "Delete", c, :method => :delete, :confirm => "Are you sure?" %><br>
 <% end %>
+</p>

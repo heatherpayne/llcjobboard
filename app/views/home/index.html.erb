@@ -1,0 +1,24 @@
+<h1>Ladies Learning Code Job Board</h1>
+
+<h2>Categories</h2>
+<% if @categories.empty? %>
+  <p>No categories!</p>
+<% else %>
+  <ul>
+    <% @categories.each do |c| %>
+      <li><%= c.name %></li>
+    <% end %>
+  </ul>
+<% end %>
+  
+<h2>Job Postings</h2>
+<p><%= link_to "'Buy' posting", new_job_posting_path %></p>
+<% if @job_postings.empty? %>
+  <p>No job postings!</p>
+<% else %>
+  <ul>
+    <% @job_postings.each do |p| %>
+      <li><%= p.title %> <%= link_to "Delete", p, :method => :delete %></li>
+    <% end %>
+  </ul>
+<% end %>

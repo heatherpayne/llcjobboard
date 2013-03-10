@@ -1,6 +1,7 @@
 <h2>New Job Posting</h2>
 
 <%= semantic_form_for @job_posting do |f| %>
-  <%= f.inputs :title, :company_name, :company_website, :company_twitter, :description, :category, :is_featured, :position_type, :contract_type, :location, :skills, :application_form_email, :email_message %>
+  <%= f.inputs :title, :company_name, :company_website, :company_twitter, :description, :category, :is_featured, :position_type, :contract_type, :skills, :application_form_email, :email_message %>
+  <%= f.input :location, :as => :country %>
   <%= f.actions :submit, :cancel %>
 <% end %>

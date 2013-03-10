@@ -21,4 +21,9 @@ class JobPostingsController < ApplicationController
     @job_posting = JobPosting.new
   end
 
+  def destroy
+    JobPosting.destroy(params[:id])
+    redirect_to '#index'
+  end
+
 end
