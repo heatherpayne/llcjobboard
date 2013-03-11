@@ -3,7 +3,12 @@
 
 <h3>Current Categories</h3>
 <p>
-<% @categories.each do |c| %>
+
+<% if @categories.nil? || @categories.empty? %>
+  <p>No categories</p>
+<% else %>
+  <% @categories.each do |c| %>
   <%= c.name %> <%= link_to "Delete", c, :method => :delete, :confirm => "Are you sure?" %><br>
+  <% end %>
 <% end %>
 </p>

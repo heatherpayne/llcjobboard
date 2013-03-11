@@ -2,11 +2,11 @@
 
 <h2>Categories</h2>
 <% if @categories.empty? %>
-  <p>No categories!</p>
+  <p>No categories! <%= link_to "Create one", new_category_path %></p>
 <% else %>
   <ul>
     <% @categories.each do |c| %>
-      <li><%= c.name %></li>
+      <li><%= c.name %> <%= link_to "Delete", c, :method => :delete, :confirm => "Are you sure?" %></li>
     <% end %>
   </ul>
 <% end %>
@@ -18,7 +18,7 @@
 <% else %>
   <ul>
     <% @job_postings.each do |p| %>
-      <li><%= p.title %> <%= link_to "Delete", p, :method => :delete %></li>
+      <li><%= p.title %> <%= link_to "Delete", p, :method => :delete, :confirm => "Are you sure?" %> | <%= link_to "Edit", edit_job_posting_path(p) %></li>
     <% end %>
   </ul>
 <% end %>

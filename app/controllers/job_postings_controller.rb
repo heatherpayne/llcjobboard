@@ -5,7 +5,7 @@ class JobPostingsController < ApplicationController
     if @job_posting.save
       redirect_to(@job_posting)
     else
-      render :action => :new
+      render :new
     end
   end
 
@@ -14,7 +14,8 @@ class JobPostingsController < ApplicationController
   end
 
   def show
-    @job_posting = JobPosting.find(params[:id])
+    @job_posting = JobPosting.find_by_id(params[:id])
+    render :text => "No posting for that id" if @job_posting.nil?
   end
 
   def new
@@ -23,7 +24,21 @@ class JobPostingsController < ApplicationController
 
   def destroy
     JobPosting.destroy(params[:id])
-    redirect_to '#index'
+    redirect_to :back
+  end
+
+  def edit
+    @job_posting = JobPosting.find_by_id(params[:id])
+    render :new
+  end
+
+  def update
+    @job_posting = JobPosting.find(params[:id])
+    if @job_posting.update_attributes(params[:job_posting])
+      redirect_to(@job_posting, :notice => "Updated")
+    else
+      render :edit, :notice => "Edit failed"
+    end
   end
 
 end
