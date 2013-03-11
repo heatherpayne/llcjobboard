@@ -1,7 +1,21 @@
 <h2>New Job Posting</h2>
 
 <%= semantic_form_for @job_posting do |f| %>
-  <%= f.inputs :title, :company_name, :company_website, :company_twitter, :description, :category, :is_featured, :position_type, :contract_type, :skills, :application_form_email, :email_message %>
-  <%= f.input :location, :as => :country %>
-  <%= f.actions :submit, :cancel %>
+  <%= f.inputs do %>
+  	<%= f.input :title, :label => "Job Title" %> 
+  	<%= f.input :company_name, :label => "Company Name" %> 
+ 	 <%= f.input :company_website, :label => "Company Website" %> 
+  	<%= f.input :company_twitter, :label => "Twitter Handle" %> 
+  	<%= f.input :description, :label => "Job Description" %> 
+  	<%= f.input :category, :label => "Job Category", :include_blank => "Please select..." %>
+  	<%= f.input :is_featured, :label => "Would you like to feature this job?" %> 
+  	<%= f.input :position_type, :as => :radio, :collection => ['Full-Time', 'Part-Time'], :label => "Full-time or Part-time?" %> 
+  	<%= f.input :contract_type, :as => :radio, :collection => ['Permanent', 'Contract', 'Freelance'], :label => "Position Type" %> 
+    <%= f.input :location, :as => :country, :label => "Location" %>
+  	<%= f.input :skills, :label => "Skills Required" %> 
+  	<%= f.actions do %>
+      <%= f.action :submit, :as => :button, :label => 'Submit' %>
+      <%= f.action :cancel, :as => :link, :label => 'or go back' %>
+  <% end %>
+  <% end %>
 <% end %>
