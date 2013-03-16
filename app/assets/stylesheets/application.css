@@ -11,3 +11,179 @@
  *= require_self
  *= require_tree .
  */
+
+/* =============================================================================
+   								Base Style 
+   ========================================================================== */
+.wrapper {
+	width: 75%;
+	margin: 0 auto;
+}
+
+h1, h3, p, ul {
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* =============================================================================
+   								Header 
+   ========================================================================== */
+
+.header {
+	background: black;
+	text-align: center;
+	padding: 30px;
+	margin: -10px;
+	border-bottom: 5px solid #fff;
+	-webkit-box-shadow: 5px 5px 5px #aaa;
+	box-shadow: 5px 5px 5px #aaa;
+}   
+
+/* =============================================================================
+   								Content 
+   ========================================================================== */
+
+.content {
+	width: 65%;
+	float: left;
+	margin-right: 20px;
+}
+
+h1 {
+	line-height: 28px;
+	font-size: 24px;
+	font-weight: 200;
+	letter-spacing: -1px;
+	padding: 20px 0 0 0;
+}
+
+.companyName {
+	color: #444;
+	font-size: 15px;
+	margin: 5px 0 0;
+}	
+
+div.grayBox {
+	background: #ccc;
+	border: 1px solid #ccc;
+	margin-top: 20px;
+}
+
+.grayBox p {
+	padding-left: 10px;
+	font-size: 14px;
+	letter-spacing: 0px;
+	font-weight: normal;
+}
+
+.twitterLogo {
+	background: #B1009A;
+	width: 20px;
+	border-radius: 50%;
+	color: black;
+	text-align: center;
+	padding: 3px;
+	font-weight: bold;
+}
+
+.location, .contract {
+	font-weight: bold;
+	color: #666;
+}	
+
+p.description, p.skills, .content ul {
+	padding: 0 70px 0 40px;
+}
+
+.description, .skills, ul {
+	font-size: 14px;
+	line-height: 21px;
+}	
+
+.skills {
+	font-weight: bold;
+}
+
+.apply {
+	border: 1px solid #ccc;
+	background: #f2f2f2;
+	margin-top: 30px;
+}
+
+.apply p.howToApply {
+	padding-left: 70px;
+	color: #B1009A;
+	font: 24px 'Helvetiva Neue', Helvetica, Arial, sans-serif;
+	float: left;
+}
+
+.apply p {
+	color: #000;
+	margin: 18px 15px 20px 0px;
+	left: 100px;
+	font-size: 13px;
+}
+
+/* =============================================================================
+   								Sidebar 
+   ========================================================================== */
+
+.sidebar {
+	width: 27%;
+	float: left;
+	margin-top: 20px;
+}
+
+.priceInfo {
+	border: 1px solid #ccc;
+	background-color: #f2f2f2;
+	border-radius: 5px;
+}
+
+.sidebar .priceInfo p {
+	margin: 0 0 5px 0;
+	font: 400 12px/16px Helvetica Neue,Helvetica,Arial,sans-serif;
+	text-align: center;
+	color: #000000;
+	padding: 20px 20px 0 20px;
+}
+
+.priceInfo p.postJob {
+	color: #B1009A;
+	font: 200 20px/24px Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+.sidebar h2 {
+	font: 200 20px/24px Helvetica Neue,Helvetica,Arial,sans-serif;
+	color: #000000;
+}
+
+.sidebar p {
+	margin: 0 0 20px 0;
+	font: 13px/20px Helvetica Neue,Helvetica,Arial,sans-serif;
+	color: #929396;
+}
+
+.sidebar h3 {
+	margin: 0 0 10px;
+	font-size: 15px;
+	font-weight: 300;
+	letter-spacing: 0px;
+	color: #929396;
+}
+
+/* =============================================================================
+   								Footer 
+   ========================================================================== */
+
+.footer {
+	width: 100%;
+	float: left;
+}   
+
+.footer p {
+	font: 9px/14px Helvetica,Arial,sans-serif;
+	text-transform: uppercase;
+	color: #6D6E70;
+	border-top: 1px solid black;
+	padding-top: 20px;
+}

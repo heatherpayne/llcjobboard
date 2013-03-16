@@ -1,10 +1,55 @@
-<h2><%= @job_posting.title %></h2>
-<p><%= @job_posting.company_name %></p>
-<p><%= @job_posting.company_website %></p>
-<p><%= @job_posting.category %></p>
-<p><%= @job_posting.company_twitter %></p>
-<p><%= @job_posting.description %></p>
-<p><%= @job_posting.position_type %></p>
-<p><%= @job_posting.contract_type %></p>
-<p><%= @job_posting.location %></p>
-<ul><li><%= @job_posting.skills %></li></ul>
+<div class="header">
+	<img src="http://jobs.ladieslearningcode.com/wp-content/uploads/2012/02/LLC-jobsHeader.png" class="headerImage">
+</div> <!-- end header -->	
+
+<div class="wrapper">
+
+	<div class="content">	
+
+		<h1><%= @job_posting.title %></h1>
+		<p class="companyName"><%= @job_posting.company_name %></p>
+		<!-- <p><%= @job_posting.company_website %></p> -->
+
+		<div class="twitter">	
+			<p class="twitterLogo">t</p>
+			<p><%= @job_posting.company_twitter %></p>
+		</div>	<!-- end twitter -->
+
+		<div class="grayBox">
+			<p>This is a <span class="contract"><%= @job_posting.contract_type %></span>
+			position in <span class="location"><%= @job_posting.location %></span>.</p>
+		</div> <!-- end grayBox -->
+
+		<p class="description"><%= @job_posting.description %></p>
+		<p class="skills">Skills / Qualifications</p>
+		<ul><%= @job_posting.skills %></ul>
+
+		<div class="apply">
+			<p class="howToApply">How to Apply</p>
+			<p>All interested and qualified candidates can apply to: jobs@eluxe.ca Please submit a link where we can see some of the work you’ve developed.</p>
+		</div>	
+
+	</div> <!-- end content	 -->
+
+	<div class="sidebar">
+
+		<p>To post a job, login or create an account</p>
+
+		<div class="priceInfo">
+			<p>30 days for $30. All proceeds support Ladies Learning Code.</p>
+			<p class="postJob">Post a job</p>
+		</div>
+
+		<h2>About Us</h2>
+		<p>At Ladies Learning Code, our mission is to inspire and empower everyone to feel comfortable learning beginner-friendly programming & technical skills. This is our job board: a place for you to find the talent you need (or the job you want), while supporting Ladies Learning Code, a proud not-for-profit organization.</p>
+
+		<h3>Popular Categories</h3>
+		<h3>Popular Tags</h3>
+
+	</div> <!-- end sidebar -->
+
+	<div class="footer">
+		<p>&copy; 2013 <a href="http://ladieslearningcode.com/">Ladies Learning Code</a></p>
+	</div>
+
+</div>	<!-- end wrapper -->
