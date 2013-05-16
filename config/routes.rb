@@ -1,10 +1,15 @@
 Llcjobboard::Application.routes.draw do
+
   resources :categories do
     resources :job_postings
   end
   resources :job_postings #we will get rid of this line when users are implemented
   resources :users do
     resources :job_postings
+  end
+
+  namespace :admin do
+    get '', to: 'dashboard#index', as: '/'
   end
 
   root :to => 'home#index'
