@@ -6,6 +6,7 @@
 </ul>
 
 <h2>Categories</h2>
+<p><%= link_to "New Category", new_category_path %></p>
 <% if @categories.empty? %>
   <p>No categories! <%= link_to "Create one", new_category_path %></p>
 <% else %>
@@ -23,6 +24,17 @@
 <% else %>
   <ul>
     <% @job_postings.each do |p| %>
+      <li><%= p.title %> <%= link_to "Delete", p, :method => :delete, :confirm => "Are you sure?" %> | <%= link_to "Edit", edit_job_posting_path(p) %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<h2>Featured Jobs</h2>
+<% if @featured_jobs.empty? %>
+  <p>No featured jobs!</p>
+<% else %>
+  <ul>
+    <% @featured_jobs.each do |f| %>
       <li><%= p.title %> <%= link_to "Delete", p, :method => :delete, :confirm => "Are you sure?" %> | <%= link_to "Edit", edit_job_posting_path(p) %></li>
     <% end %>
   </ul>
