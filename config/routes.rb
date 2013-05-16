@@ -10,6 +10,10 @@ Llcjobboard::Application.routes.draw do
     resources :job_postings
   end
 
+  namespace :admin do
+    get '', to: 'dashboard#index', as: '/'
+  end
+
   root :to => 'home#index'
 
   # The priority is based upon order of creation:

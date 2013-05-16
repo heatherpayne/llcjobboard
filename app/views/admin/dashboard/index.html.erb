@@ -1,0 +1,29 @@
+<h1>Administration</h1>
+
+<ul>
+  <li><%= link_to 'Manage Users' %></li>
+  <li><%= link_to 'Manage Job Postings' %></li>
+</ul>
+
+<h2>Categories</h2>
+<% if @categories.empty? %>
+  <p>No categories! <%= link_to "Create one", new_category_path %></p>
+<% else %>
+  <ul>
+    <% @categories.each do |c| %>
+      <li><%= c.name %> <%= link_to "Delete", c, :method => :delete, :confirm => "Are you sure?" %></li>
+    <% end %>
+  </ul>
+<% end %>
+  
+<h2>Job Postings</h2>
+<p><%= link_to "Post a Job", new_job_posting_path %></p>
+<% if @job_postings.empty? %>
+  <p>No job postings!</p>
+<% else %>
+  <ul>
+    <% @job_postings.each do |p| %>
+      <li><%= p.title %> <%= link_to "Delete", p, :method => :delete, :confirm => "Are you sure?" %> | <%= link_to "Edit", edit_job_posting_path(p) %></li>
+    <% end %>
+  </ul>
+<% end %>
