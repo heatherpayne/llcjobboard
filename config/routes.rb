@@ -1,4 +1,7 @@
 Llcjobboard::Application.routes.draw do
+  devise_for :admins
+  devise_for :users
+
   resources :categories do
     resources :job_postings
   end

@@ -1,12 +1,16 @@
 <h1>Ladies Learning Code Job Board</h1>
 
+<%- if !current_admin.nil? %>
+  <p>Hello <%= current_admin.email %>! <%= link_to "Sign out", destroy_admin_session_path, :method => :delete %></p>
+<% end -%>
+
 <h2>Categories</h2>
 <% if @categories.empty? %>
-  <p>No categories! <%= link_to "Create one", new_category_path %></p>
+  <p>No categories! <% if admin_signed_in? %> <%= link_to "Create one", new_category_path %> <% end %></p>
 <% else %>
   <ul>
     <% @categories.each do |c| %>
-      <li><%= c.name %> <%= link_to "Delete", c, :method => :delete, :confirm => "Are you sure?" %></li>
+      <li><%= c.name %> <% if admin_signed_in? link_to "Delete", c, :method => :delete, :confirm => "Are you sure?"; end %></li>
     <% end %>
   </ul>
 <% end %>
@@ -18,7 +22,28 @@
 <% else %>
   <ul>
     <% @job_postings.each do |p| %>
-      <li><%= p.title %> <%= link_to "Delete", p, :method => :delete, :confirm => "Are you sure?" %> | <%= link_to "Edit", edit_job_posting_path(p) %></li>
+      <li><%= link_to p.title, p %> 
+        <%- if admin_signed_in? %>
+        <%=link_to "Delete", p, :method => :delete, :confirm => "Are you sure?" %> | 
+        <%=link_to "Edit", edit_job_posting_path(p) %></li>
+        <% end %>
     <% end %>
   </ul>
+<% end %>
+
+<% if !admin_signed_in? %>
+<h2>Sign in as Admin</h2>
+<%= form_for(@resource, :as => :admin, :url => session_path(:admin)) do |f| %>
+  <div><%= f.label :email %><br />
+  <%= f.email_field :email, :autofocus => true %></div>
+
+  <div><%= f.label :password %><br />
+  <%= f.password_field :password %></div>
+
+  <% if @devise_mapping.rememberable? -%>
+    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+  <% end -%>
+
+  <div><%= f.submit "Sign in as Admin" %></div>
+<% end %>
 <% end %>
