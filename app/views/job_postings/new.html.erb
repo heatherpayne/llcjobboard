@@ -1,10 +1,18 @@
-<h2>New Job Posting</h2>
+<div class="header">
+  <img src="http://jobs.ladieslearningcode.com/wp-content/uploads/2012/02/LLC-jobsHeader.png" class="headerImage">
+</div> <!-- end header -->  
+
+<div class="wrapper">
+
+  <div class="content">  
+
+<h1>New Job Posting</h1>
 
 <%= semantic_form_for @job_posting do |f| %>
   <%= f.inputs do %>
-  	<%= f.input :title, :label => "Job Title" %> 
+  	<%= f.input :title, :label => "Job Title" %>
   	<%= f.input :company_name, :label => "Company Name" %> 
- 	 <%= f.input :company_website, :label => "Company Website" %> 
+ 	  <%= f.input :company_website, :label => "Company Website" %> 
   	<%= f.input :company_twitter, :label => "Twitter Handle" %> 
   	<%= f.input :description, :label => "Job Description" %> 
   	<%= f.input :category, :label => "Job Category", :include_blank => "Please select..." %>
@@ -18,4 +26,29 @@
       <%= f.action :cancel, :as => :link, :label => 'or go back' %>
   <% end %>
   <% end %>
-<% end %>
+<% end %> 
+
+  </div> <!-- end content  -->
+
+  <div class="sidebar">
+
+    <p>Logged in as <%= @username %></p>
+
+    <div class="priceInfo">
+      <p>30 days for $30. All proceeds support Ladies Learning Code.</p>
+      <p class="postJob">Post a job</p>
+    </div>
+
+    <h2>About Us</h2>
+    <p>At Ladies Learning Code, our mission is to inspire and empower everyone to feel comfortable learning beginner-friendly programming & technical skills. This is our job board: a place for you to find the talent you need (or the job you want), while supporting Ladies Learning Code, a proud not-for-profit organization.</p>
+
+    <h3>Popular Categories</h3>
+    <h3>Popular Tags</h3>
+
+  </div> <!-- end sidebar -->
+
+  <div class="footer">
+    <p>&copy; 2013 <a href="http://ladieslearningcode.com/">Ladies Learning Code</a></p>
+  </div>
+
+</div>  <!-- end wrapper -->

@@ -3,3 +3,24 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+h1 {
+	line-height: 28px;
+	font-size: 24px;
+	font-weight: 200;
+	letter-spacing: -1px;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	padding: 20px 0 0 0;
+	margin-bottom: 40px;
+}
+
+p, ol, ul {
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 14px;
+}
+
+/* or go back link */
+.formtastic .link_action a {
+	display: block;	
+	padding: 8px 0;
+	font-size: 12px;
+}	
